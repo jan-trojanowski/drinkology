@@ -1,0 +1,23 @@
+<head>
+  <title>Drinkology</title>
+</head>
+
+<body class="container" ng-app="drinkology">
+  <h1>Welcome to Drinkology!</h1>
+
+  <!-- {{> search}} -->
+  
+  <section ng-include="'ingredients.ng.html'"></section>
+  <!-- <section class="chosen" ng-include="'chosen.ng.html'"></section> -->
+  <section ng-include="'your-choice.ng.html'"></section>
+  <section ng-include="'drinks.ng.html'"></section>
+</body>
+
+<template name="search">
+  <h3>Type in your ingredients and find the perfect cocktail!</h3>
+  <form ng-controller="Search">
+    <div class="form-group">
+      <input typeahead class="typeahead form-control" ng-model="text" type="text" placeholder="e.g. Rum, Cola, Lime" data-source="typeahead" />
+    </div>
+  </form>
+</template>

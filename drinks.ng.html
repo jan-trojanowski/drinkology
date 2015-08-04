@@ -1,0 +1,25 @@
+<h3>All Drinks:</h3>
+<table class="table table-striped drinks" ng-controller="Drinks">
+  <thead>
+    <tr>
+      <th ng-click="reverse =! reverse; sort('title', reverse)">Title</th>
+      <th>Ingredients</th>
+      <th ng-click="reverse =! reverse; sort('strength', reverse)">Strength</th>
+      <th ng-click="reverse =! reverse; sort('glass', reverse)">Glass</th>
+      <!-- <th>Created At</th> -->
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="drink in drinks">
+      <td><button type="button" class="btn btn-default">{{drink.title}}</button></td>
+      <td>
+        <button type="button" class="btn btn-default btn-sm" ng-repeat="ingredient in drink.ingredients">{{ingredient}}</button>
+      </td>
+      <td>{{drink.strength}}</td>
+      <td>{{drink.glass}}</td>
+      <!-- <td>{{drink.createdAt}}</td> -->
+      <td><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></td>
+    </tr>
+  </tbody>
+</table>

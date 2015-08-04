@@ -1,0 +1,6 @@
+<div ng-controller="Ingredients" class="ingredients">
+	<h2>Ingredients:</h2>
+	<button button-chosen class="btn btn-default" ng-repeat="ingredient in ingredients" ng-click="add(ingredient.name, $event, $element)">
+		{{ingredient.name}}
+	</button>
+</div>
