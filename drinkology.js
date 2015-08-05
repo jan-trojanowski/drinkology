@@ -1,4 +1,4 @@
-/* global Meteor:true, Mongo:true, Template: true, angular: true */
+/* global Meteor:true, Mongo:true, angular:true, _:true */
 'use strict';
 
 var Ingredients = new Mongo.Collection('ingredients');
@@ -21,7 +21,6 @@ if (Meteor.isClient) {
   App.directive('typeahead', function () {
     return function ($scope, $element) {
       $element.bind('typeahead:selected', function () {
-        console.log($element, $scope);
         // $scope.add();
       });
     };
@@ -72,19 +71,34 @@ if (Meteor.isClient) {
     $scope.sort = function(predicate, reverse) {
       $scope.drinks = orderBy($scope.drinks, predicate, reverse);
     };
-  }]);
 
-  Template.body.helpers({
-    typeahead: function () {
-      return Ingredients.find({}).fetch().map(function (el) {
-        return el.name;
-      });
-    }
-  });
+    $scope.remove = function (id) {
+      Drinks.remove(id);
+    };
+  }]);
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    // Meteor.typeahead.inject();
+    // Fill Collections with data
+    var drinks = [
+      {title:'Cuba Libre', ingredients:['White Rum','Cola', 'Lime Juice'], strength: 3, glass: 'Highball', createdAt: new Date()},
+      {title:'Mai Tai', ingredients:['White Rum','Dark Rum', 'Orange Curacao', 'Orgeat Syrup', 'Lime Juice'], strength: 2, glass: 'Highball', createdAt: new Date()},
+      {title:'Screwdriver', ingredients:['Vodka','Orange Juice'], strength: 3, glass: 'Highball', createdAt: new Date()},
+      {title:'John Collins', ingredients:['Gin','Lemon Juice', 'Sugar Syrup', 'Soda Water'], strength: 3, glass: 'Highball', createdAt: new Date()}
+    ];
+
+    var ingredients = [];
+
+    var fillCollectionWithData = function (data, collection) {
+      if (!collection.find().count()) {
+        _.each(data, function (element) {
+          collection.insert(element);
+        });
+      }
+    };
+
+    fillCollectionWithData(drinks, Drinks);
+    fillCollectionWithData(ingredients, Ingredients);
   });
 }
