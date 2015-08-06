@@ -11,10 +11,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="drink in drinks">
+    <tr ng-repeat="drink in drinks" ng-click="showDetails()">
       <td><button type="button" class="btn btn-default">{{drink.title}}</button></td>
       <td>
-        <button type="button" class="btn btn-default btn-sm" ng-repeat="ingredient in drink.ingredients">{{ingredient}}</button>
+        <button type="button" class="btn btn-default btn-sm" ng-repeat="ingredient in drink.ingredients">{{ingredient.name}}</button>
       </td>
       <td>{{drink.strength}}</td>
       <td>{{drink.glass}}</td>

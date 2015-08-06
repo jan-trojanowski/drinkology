@@ -7,6 +7,12 @@
   outline: none !important;
 }
 
+.highball {
+  height: 300px;
+  width: 200px;
+  border: 1px solid;
+}
+
 pre {
   display: block;
   padding: 9.5px;
