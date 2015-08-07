@@ -21,5 +21,14 @@
       <!-- <td>{{drink.createdAt}}</td> -->
       <td><button type="button" class="close" aria-label="Close" ng-click="remove(drink._id)"><span aria-hidden="true">&times;</span></button></td>
     </tr>
+    <tr>
+      <form>
+        <td><input class="form-control" placeholder="title" ng-model="drink.title" /></td>
+        <td><input class="form-control" placeholder="ingredients" /></td>
+        <td><input class="form-control" placeholder="strength" ng-model="drink.strength" /></td>
+        <td><input class="form-control" placeholder="type of glass" ng-model="drink.glass" /></td>
+        <td><button class="btn btn-default" ng-click="add()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td>
+      </form>
+    </tr>
   </tbody>
 </table>

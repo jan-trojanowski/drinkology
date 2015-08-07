@@ -9,6 +9,10 @@ App.controller('Drinks', ['$scope', '$meteor', '$filter', 'chosenDrink', functio
     $scope.drinks = orderBy($scope.drinks, predicate, reverse);
   };
 
+  $scope.add = function () {
+    // Drinks.insert({});
+  };
+
   $scope.remove = function (id) {
     Drinks.remove(id);
   };
