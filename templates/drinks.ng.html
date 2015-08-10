@@ -23,11 +23,27 @@
     </tr>
     <tr>
       <form>
-        <td><input class="form-control" placeholder="title" ng-model="drink.title" /></td>
-        <td><input class="form-control" placeholder="ingredients" /></td>
-        <td><input class="form-control" placeholder="strength" ng-model="drink.strength" /></td>
-        <td><input class="form-control" placeholder="type of glass" ng-model="drink.glass" /></td>
-        <td><button class="btn btn-default" ng-click="add()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td>
+        <td><input class="form-control" placeholder="title" ng-model="drink.title" required /></td>
+        <td><input class="form-control" placeholder="ingredients" ng-required="true" /></td>
+        <td>
+          <select class="form-control" ng-model="drink.strength" required>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-control" ng-model="drink.glass" required>
+            <option>Highball</option>
+            <option>Lowball</option>
+            <option>Old Fashioned</option>
+          </select>
+        </td>
+        <!-- <td><button class="btn btn-default" ng-click="add(drink)" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td> -->
+
+        <td><input type="submit" class="btn btn-default" ng-submit="add(drink)" /></td>
       </form>
     </tr>
   </tbody>
