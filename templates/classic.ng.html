@@ -1,0 +1,7 @@
+<header>{{classic.title}}</header>
+<section class="ingredients row">
+  <p class="col-xs-12">What You'll Need</p>
+
+  <span ng-repeat="ingredient in classic.ingredients" class="glyphicon glyphicon-glass col-xs-3" data-title="{{ingredient.name}}" data-capacity="{{ingredient.capacity}}"></span>
+</section>
+<section class="start"><a href="/classics/{{classic._id}}/1">Let's Start!</a></section>

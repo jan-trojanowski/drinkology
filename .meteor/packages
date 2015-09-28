@@ -10,3 +10,4 @@ insecure
 sergeyt:typeahead
 twbs:bootstrap
 urigo:angular
+angularui:angular-ui-router

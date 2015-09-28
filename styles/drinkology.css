@@ -1,3 +1,73 @@
+body {
+  font-size: 20px;
+  background: #09CAD9;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+nav {
+  margin: 0 !important;
+  padding: 2vh 1vh;
+}
+
+nav span {
+  text-align: right;
+  font-size: 5vh;
+}
+
+header {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5vh 0;
+  font-size: 7vh;
+  border-top: 1px solid #fff;
+}
+
+section {
+  text-transform: uppercase;
+  text-align: center;
+  /*height: 300px;*/
+  padding: 15vh 0;
+  font-size: 7vh;
+  border-top: 1px solid #fff;
+}
+
+section.classic {
+  padding: 3vh 0;
+  font-size: 5vh;
+}
+section.ingredients {
+  padding: 3vh 0;
+}
+section.alcohol {
+  padding: 3vh 0;
+  font-size: 3vh;
+}
+section.alcohol:nth-child(even) {
+  border-right: 1px solid #fff;
+}
+
+section.alcohol:nth-child(n+5) {
+  border-bottom: 1px solid #fff;
+}
+
+section a {
+  position: relative;
+  top: 25%;
+}
+
+section a:hover {
+  color: #fff;
+}
+
+.ingredients span {
+  margin: 2rem 0;
+  font-size: 5vh;
+}
+
 .drinks button,
 .ingredients button {
   margin-right: 5px;

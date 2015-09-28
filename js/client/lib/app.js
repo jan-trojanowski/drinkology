@@ -1,1 +1,1 @@
-App = angular.module('drinkology', ['angular-meteor']);
+App = angular.module('drinkology', ['angular-meteor', 'ui.router']);

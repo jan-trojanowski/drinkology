@@ -1,17 +1,23 @@
 <head>
-  <title>Drinkology</title>
+  <title>Drinkology App</title>
+  <base href="/">
 </head>
 
-<body class="container" ng-app="drinkology">
-  <h1>Welcome to Drinkology!</h1>
+<body ng-app="drinkology">
+  <nav class="row">
+    <a href="/" class="col-xs-6">Logo<img src=""></a>
+    <a href="/"><span class="glyphicon glyphicon-menu-hamburger col-xs-6"></span></a>
+  </nav>
+
+  <div ui-view></div>
 
   <!-- {{> search}} -->
   
-  <section ng-include="'templates/ingredients.ng.html'"></section>
+  <!-- <section ng-include="'templates/ingredients.ng.html'"></section> -->
   <!-- <section class="chosen" ng-include="'templates/chosen.ng.html'"></section> -->
-  <section ng-include="'templates/your-choice.ng.html'"></section>
+  <!-- <section ng-include="'templates/your-choice.ng.html'"></section>
   <section ng-include="'templates/drinks.ng.html'"></section>
-  <section ng-include="'templates/drink-details.ng.html'"></section>
+  <section ng-include="'templates/drink-details.ng.html'"></section> -->
 </body>
 
 <template name="search">
